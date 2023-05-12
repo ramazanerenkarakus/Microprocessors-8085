@@ -1,0 +1,27 @@
+
+	   LXI B,8001
+	   LXI H,9001
+	   MVI E,0A
+
+LOOP:	   LDAX B
+	   ANI 01
+	   JNZ TEK
+	   JMP CIFT
+
+CIFT:	   LDAX B
+	   MOV M,A
+	   INX H
+	   INX B
+	   DCR E
+	   JNZ LOOP
+	   HLT
+
+TEK:	   INX B
+	   DCR E
+	   JNZ LOOP
+	   HLT
+
+# ORG 8001H
+# DB 11H ,12H, 13H, 14H, 15H, 16H, 17H, 18H, 19H, 1A
+
+//2021**** RAMAZAN EREN KARAKUŞ
